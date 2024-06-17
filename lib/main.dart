@@ -6,8 +6,8 @@ void main() {
     theme: ThemeData(
       iconTheme: const IconThemeData(color: Colors.blue),
       appBarTheme: const AppBarTheme(
-        color: Colors.grey,
-        actionsIconTheme: IconThemeData(color: Colors.red),
+        backgroundColor: Colors.white,
+        actionsIconTheme: IconThemeData(size: 40),
       ),
       textTheme: const TextTheme(bodyMedium: TextStyle(color: Colors.red)),
     ),
@@ -22,17 +22,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: const [
-          Icon(Icons.star),
-          Icon(Icons.star),
-        ],
+        title: const Text("Instagram"),
+        actions: const [Icon(Icons.add_box_outlined), SizedBox(width: 7)],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(0.5),
+          child: Container(
+            color: Colors.grey,
+            height: 0.5,
+          ),
+        ),
       ),
-      body: const Row(
-        children: [
-          Text('빨갱이', style: TextStyle(fontSize: 20)),
-          Icon(Icons.star)
-        ],
-      ),
+      body: Container(color: Colors.white70),
     );
   }
 }
